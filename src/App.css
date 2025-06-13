@@ -14,32 +14,39 @@
 }
 
 .logo {
-  width: 1200px;
+  max-width: 100%;
   height: auto;
+  width: 80px;
   object-fit: contain;
 }
 
 /* Responsive adjustments */
+@media screen and (min-width: 375px) {
+  .logo {
+    width: 100px;
+  }
+}
+
 @media screen and (min-width: 425px) {
   .logo {
-    width: 150px;
+    width: 120px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    width: 180px;
+    width: 150px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .logo {
-    width: 200px;
+    width: 180px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .logo {
-    width: 220px;
+    width: 200px;
   }
 }

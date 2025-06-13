@@ -16,7 +16,7 @@
 }
 
 .nav-brand a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: #333;
@@ -38,7 +38,7 @@
 }
 
 .nav-links li a {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 0.8rem;
   color: #333;
@@ -51,7 +51,7 @@
 }
 
 .nav-links li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -166,4 +166,4 @@
   .nav-links li a {
     font-size: 0.9rem;
   }
-} 
+}

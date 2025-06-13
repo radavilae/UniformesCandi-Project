@@ -1,79 +1,45 @@
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import { useState, useEffect } from "react";
+import "./Carousel.css";
 
-const { width: screenWidth } = Dimensions.get('window');
+const Carousel = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-interface CarouselItem {
-  id: string;
-  title: string;
-  description: string;
-}
+  const images = [
+    "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop",
+  ];
 
-interface CarouselComponentProps {
-  items: CarouselItem[];
-}
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000);
 
-const CarouselComponent: React.FC<CarouselComponentProps> = ({ items }) => {
-  const renderItem = ({ item }: { item: CarouselItem }) => {
-    return (
-      <View style={styles.slide}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
-    );
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <Carousel
-        data={items}
-        renderItem={renderItem}
-        sliderWidth={screenWidth}
-        itemWidth={screenWidth - 60}
-        layout="default"
-        loop={true}
-        autoplay={true}
-        autoplayInterval={3000}
+    <div className="carousel-container">
+      <img
+        src={images[currentImageIndex]}
+        alt={`Slide ${currentImageIndex + 1}`}
+        className="carousel-image"
       />
-    </View>
+      <div className="carousel-dots">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentImageIndex ? "active" : ""}`}
+            onClick={() => setCurrentImageIndex(index)}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  slide: {
-    backgroundColor: '#f8f8f8',
-    borderRadius: 10,
-    height: 200,
-    padding: 20,
-    marginLeft: 25,
-    marginRight: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: '#333',
-  },
-  description: {
-    fontSize: 16,
-    color: '#666',
-    textAlign: 'center',
-  },
-});
-
-export default CarouselComponent; 
+export default Carousel;

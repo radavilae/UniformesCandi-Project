@@ -3,7 +3,7 @@ body {
   background-color: #ffffff;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
@@ -53,7 +53,7 @@ header {
 header p {
   max-width: 600px;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
   color: #333;
@@ -81,7 +81,7 @@ header p {
   border: none;
   outline: none;
   border-radius: 36px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
   cursor: pointer;
@@ -247,7 +247,7 @@ nav {
 }
 
 /* Mobile friendly (opcional: si prefieres menos alto en móviles) */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .carrusel {
     height: 70vh;
   }

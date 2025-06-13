@@ -6,6 +6,7 @@
   overflow: hidden;
   height: 40vh;
   min-height: 250px;
+  box-sizing: border-box;
 }
 
 .carousel-image {
@@ -23,6 +24,9 @@
   display: flex;
   gap: 8px;
   z-index: 10;
+  width: auto;
+  padding: 0;
+  margin: 0;
 }
 
 .dot {
@@ -32,6 +36,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .dot.active {

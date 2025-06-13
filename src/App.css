@@ -3,3 +3,43 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+}
+
+.logo {
+  width: 1200px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 425px) {
+  .logo {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo {
+    width: 220px;
+  }
+}

@@ -29,15 +29,16 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .dot.active {
   background-color: white;
+  transform: scale(1.2);
 }
 
-/* Responsive styles */
-@media screen and (min-width: 375px) {
+/* Responsive breakpoints */
+@media (min-width: 375px) {
   .carousel-container {
     height: 40vh;
     min-height: 250px;
@@ -54,7 +55,7 @@
   }
 }
 
-@media screen and (min-width: 425px) {
+@media (min-width: 425px) {
   .carousel-container {
     height: 45vh;
     min-height: 300px;
@@ -66,12 +67,12 @@
   }
 
   .carousel-dots {
-    bottom: 15px;
+    bottom: 14px;
     gap: 8px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .carousel-container {
     height: 50vh;
     min-height: 400px;
@@ -83,12 +84,12 @@
   }
 
   .carousel-dots {
-    bottom: 20px;
+    bottom: 18px;
     gap: 10px;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .carousel-container {
     height: 60vh;
     min-height: 500px;
@@ -100,14 +101,14 @@
   }
 
   .carousel-dots {
-    bottom: 25px;
+    bottom: 22px;
     gap: 12px;
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
   .carousel-container {
     height: 70vh;
     min-height: 600px;
   }
-} 
+}
